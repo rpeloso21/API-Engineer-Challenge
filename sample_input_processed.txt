@@ -1,0 +1,4 @@
+name|id|city
+bel, james|10|paris
+smith, peter|11|Chicago
+mcdonalds, julie|12|NYC
