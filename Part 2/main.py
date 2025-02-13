@@ -3,7 +3,7 @@ from shapely.geometry import Polygon as ShapelyPolygon
 from sympy import Point, Polygon as SymPyPolygon, pi, N
 import numpy as np
 
-points = [(0, 2), (2, 4), (4, 2), (2, 0)]  # Square
+points = [(0, 0), (2, 3), (4, 0), (2, -1)]
 
 
 
@@ -44,10 +44,9 @@ def classify_quadrilateral_sympy(points):
     parallel_2_4 = sides[1].is_parallel(sides[3])
 
 # ----- Find equal sides -----
-    lengths = [sides[i].length for i in range(4)]
+    lengths = [float(N(sides[i].length)) for i in range(4)]
     all_sides_equal = all(lengths[0] == length for length in lengths)
     opposite_sides_equal = lengths[0] == lengths[2] and lengths[1] == lengths[3]
-
 
     if right_angles:
         if all_sides_equal:
@@ -63,19 +62,17 @@ def classify_quadrilateral_sympy(points):
     elif parallel_1_3 or parallel_2_4:
         return "Trapezoid"
     
-    elif ((np.isclose(lengths[0], lengths[1], atol=1e-6) and 
-           np.isclose(lengths[2], lengths[3], atol=1e-6)) or 
-          (np.isclose(lengths[1], lengths[2], atol=1e-6) and 
-           np.isclose(lengths[3], lengths[0], atol=1e-6))):
+    elif ((np.isclose(lengths[0], lengths[1], atol=1e-6) and np.isclose(lengths[2], lengths[3], atol=1e-6)) or 
+          (np.isclose(lengths[1], lengths[2], atol=1e-6) and np.isclose(lengths[3], lengths[0], atol=1e-6))):
         return "Kite"
     
     else:
         return "Other"
     
+    
+def graph_shape(points):
+    p1, p2, p3, p4 = [point for point in points]
 
-        
-
-def graph_shape(p1, p2, p3, p4):
     x = [p1[0], p2[0], p3[0], p4[0]]
     y = [p1[1], p2[1], p3[1], p4[1]]
 
@@ -92,7 +89,8 @@ def graph_shape(p1, p2, p3, p4):
     plt.show()
 
 
+if __name__ == "__main__":
 
-calculate_area(points)
-print(classify_quadrilateral_sympy(points))
-graph_shape((0, 2), (2, 4), (4, 2), (2, 0))
+    calculate_area(points)
+    print(classify_quadrilateral_sympy(points))
+    graph_shape(points)
