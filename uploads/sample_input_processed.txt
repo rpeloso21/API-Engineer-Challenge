@@ -1,4 +1,0 @@
-name|city|id
-bel, james|paris|10
-smith, peter|Chicago|11
-mcdonalds, julie|NYC|12

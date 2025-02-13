@@ -1,0 +1,20 @@
+Prompt: 
+
+Please describe and provide an example of how to read key-value pair input
+from a file and flatten the data so the data can be ingested.
+
+Answer:
+
+No matter what language you are using, the steps are basically the same.
+
+1. You need a process that can identify the integrity of the data.  This means that you need to verify that the 
+file type is correct and that the data is formatted in a way that they program can parse.
+
+2. You need to develop a function that can parse the data.  The first step is usually to split the data into manageable chunks.
+After this, it needs to be seperated into the basic, flattened structure that you are looking to output.
+
+3. Finally, you will need to restructure the data in the 2d form that you are needing for ingestion.
+
+Note:  All of this depends on the file format (eg. JSON, YAML, CSV) and the input structure (eg. types of characters, 
+delimiters, and nested data structures) and the output that you are hoping to arrange it into.  The above is a basic overview
+ of the steps that would normally be taken.

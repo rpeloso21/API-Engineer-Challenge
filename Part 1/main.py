@@ -58,5 +58,3 @@ def upload_file():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# flatten_data("sample_input.txt")
