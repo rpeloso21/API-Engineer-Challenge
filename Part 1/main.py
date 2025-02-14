@@ -5,13 +5,14 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-def flatten_data(file):
+def flatten_data(input_file):
     data = []
     keys = set()
 
-    output_file = f"{os.path.splitext(file)[0]}_processed.txt"
+    output_file = os.path.join("processed", f"{os.path.splitext(os.path.basename(input_file))[0]}_processed.txt")
+    os.makedirs("processed", exist_ok=True)
 
-    with open(file, "r") as file:
+    with open(input_file, "r") as file:
         for line in file:
             entries = line.strip().split("^^")
             row_dict = {}
@@ -53,7 +54,7 @@ def upload_file():
 
     processed_file = flatten_data(uploaded_file_path)
 
-    return send_file(processed_file, as_attachment=True) 
+    return send_file(os.path.abspath(processed_file), as_attachment=True)
 
 
 if __name__ == "__main__":

@@ -3,13 +3,12 @@ from shapely.geometry import Polygon as ShapelyPolygon
 from sympy import Point, Polygon as SymPyPolygon, pi, N
 import numpy as np
 
-points = [(0, 0), (2, 3), (4, 0), (2, -1)]
+points = [(0, 0), (3, 4), (7, 3), (4, -2)]
 
 
-
-# The parse_input function would be used only if the data was given as a string in the exact manner shown in 
-# the example.  You would then pass parse_input("(x1,y1) (x2,y2) (x3,y3) (x4,y4)") into the 
-# calculate_quadrilateral function.
+'''The parse_input function would be used only if the data was given as a string in the exact manner shown in 
+the example.  You would then pass "parse_input("(x1,y1) (x2,y2) (x3,y3) (x4,y4)")" into the 
+other functions.'''
 def parse_input(input_str):
     points = [
         tuple(map(int, pair.strip("()").split(","))) 
@@ -22,8 +21,12 @@ def calculate_area(points):
 
     polygon = ShapelyPolygon(points)
     area = polygon.area
-    print(area)
-    return area
+
+    if classify_quadrilateral_sympy(points) == "Other":
+        return -1
+    
+    else:
+        return area
 
 
 def classify_quadrilateral_sympy(points):
@@ -91,6 +94,5 @@ def graph_shape(points):
 
 if __name__ == "__main__":
 
-    calculate_area(points)
-    print(classify_quadrilateral_sympy(points))
+    print(f"{classify_quadrilateral_sympy(points)} {calculate_area(points)}")
     graph_shape(points)
