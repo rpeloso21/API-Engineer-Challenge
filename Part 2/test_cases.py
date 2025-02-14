@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from shapely.geometry import Polygon as ShapelyPolygon
 from sympy import Point, Polygon as SymPyPolygon, pi, N
 import numpy as np
-from main import classify_quadrilateral_sympy
+from main import classify_quadrilateral_sympy, calculate_area
 
 
 test_cases = [
@@ -31,9 +31,13 @@ test_cases = [
     ([(0, 0), (3, 4), (6, 0), (3, -4)], "Rhombus"),
 
     #9
-    ([(0, 0), (3, 4), (7, 3), (4, -2)], "Other")
+    ([(0, 0), (3, 4), (7, 3), (4, -2)], "Other"),
+
+    #10
+    ([(0, 0), (3, 4), (7, 3)], "Not a quadrilateral")
 ]
 
 for points, expected in test_cases:
     result = classify_quadrilateral_sympy(points)
-    print(f"Points: {points}\n  Classified: {result} | Expected: {expected}\n")
+    area = calculate_area(points)
+    print(f"Points: {points}\n  Area:{area}\n  Classified: {result} | Expected: {expected}\n")

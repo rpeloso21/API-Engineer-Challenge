@@ -1,0 +1,20 @@
+id=100^^name=doe, john^^city=los angeles^^country=usa
+id=101^^name=smith, ^jane^^city=San Francisco^^age=29
+id=102^^name=jackson, robert^^city=New=York^^country=usa^^age=40
+id=103^^name=^^city=Miami^^country=usa^^age=35
+id=104^^name=li, wei^^city=beijing^^country=china^^age=28
+id=105^^name=garcia, maria^^city=mexico city^^country=mexico^^age=^^profession=engineer
+id=106^^name=okafor, chinedu^^city=lagos^^country=nigeria^^age=33^^profession=doctor
+id=107^^name=tanaka, yuki^^city=tokyo^^country=japan^^age=^^profession=teacher
+id=108^^name=schmidt, hans^^city=berlin^^country=germany^^age=41^^profession=scientist
+id=109^^name=almeida, sofia^^city=lisbon^^country=portugal^^age=26^^profession=artist
+id=110^^name=koval, ivan^^city=kyiv^^country=ukraine^^age=^^profession=lawyer
+id=111^^name=petrov, sergei^^city=moscow^^country=russia^^age=39^^profession=pilot
+id=112^^name=lopez, carlos^^city=buenos=aires^^country=argentina^^age=30^^profession=chef
+id=113^^name=chang, mei^^city=seoul^^country=south korea^^age=27^^profession=musician
+id=114^^name=fernandez, lucas^^city=santiago^^country=chile^^age=^^profession=athlete
+id=115^^name=jean, claude^^city=montreal^^country=canada^^age=32^^profession=designer
+id=116^^name=smith, ^david^^city=london^^country=uk^^age=29^^profession=writer
+id=117^^name=^^city=dubai^^country=uae^^age=37^^profession=entrepreneur
+id=118^^name=singh, arjun^^city=new delhi^^country=india^^age=31^^profession=engineer
+id=119^^name=nguyen, linh^^city=ho chi minh^^country=vietnam^^age=24^^profession=journalist
